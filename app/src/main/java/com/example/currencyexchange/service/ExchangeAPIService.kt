@@ -17,7 +17,7 @@ class ExchangeAPIService {
         .build()
         .create(ExchangeAPI::class.java)
 
-    fun getDataService(toCurrency: String, fromCurrency: String, amountCurrency: Int): Single<ExchangeModel>{
+    fun getDataService(toCurrency: String, fromCurrency: String, amountCurrency: Float): Single<ExchangeModel>{
         return api.getData(toCurrency, fromCurrency, amountCurrency)
     }
 }

@@ -1,5 +1,6 @@
 package com.example.currencyexchange.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.currencyexchange.model.ExchangeModel
@@ -17,11 +18,11 @@ class MainViewModel: ViewModel() {
     val exchange_error = MutableLiveData<Boolean>()
     val exchange_load = MutableLiveData<Boolean>()
 
-    fun refreshData(toCurrency: String, fromCurrency: String, amountCurrency: Int) {
+    fun refreshData(toCurrency: String, fromCurrency: String, amountCurrency: Float) {
         getDataFromAPI(toCurrency, fromCurrency, amountCurrency)
     }
 
-    private fun getDataFromAPI(toCurrency: String, fromCurrency: String, amountCurrency: Int){
+    private fun getDataFromAPI(toCurrency: String, fromCurrency: String, amountCurrency: Float){
         exchange_load.value = true
         disposable.add(
             exchangeAPIService.getDataService(toCurrency, fromCurrency, amountCurrency)
@@ -35,6 +36,7 @@ class MainViewModel: ViewModel() {
                     }
 
                     override fun onError(e: Throwable) {
+                        Log.e("onErr", e.toString())
                         exchange_error.value = true
                         exchange_load.value = true
                     }

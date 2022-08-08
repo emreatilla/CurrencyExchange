@@ -1,3 +1,46 @@
 <resources>
     <string name="app_name">Currency Exchange</string>
+    <string-array name="currency_codes">
+        <item>TRY</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>JPY</item>
+        <item>BTC</item>
+        <item>GBP</item>
+        <item>AUD</item>
+        <item>CAD</item>
+        <item>CHF</item>
+        <item>CNY</item>
+        <item>HKD</item>
+        <item>NZD</item>
+        <item>SEK</item>
+        <item>KRW</item>
+        <item>SGD</item>
+        <item>NOK</item>
+        <item>MXN</item>
+        <item>INR</item>
+        <item>RUB</item>
+        <item>ZAR</item>
+        <item>BRL</item>
+        <item>TWD</item>
+        <item>TWD</item>
+        <item>PLN</item>
+        <item>THB</item>
+        <item>IDR</item>
+        <item>HUF</item>
+        <item>CZK</item>
+        <item>ILS</item>
+        <item>CLP</item>
+        <item>PHP</item>
+        <item>AED</item>
+        <item>COP</item>
+        <item>SAR</item>
+        <item>MYR</item>
+        <item>RON</item>
+    </string-array>
+
+    <string name="string_from"><u>From</u></string>
+
+    <string name="string_to"><u>To</u></string>
+
 </resources>
