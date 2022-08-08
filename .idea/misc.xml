@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Emre/AndroidStudioProjects/CurrencyExchange/app/src/main/res/layout/activity_main.xml" value="0.2064814814814815" />
+        <entry key="..\:/Users/Emre/AndroidStudioProjects/CurrencyExchange/app/src/main/res/drawable/custominput.xml" value="0.1615" />
+        <entry key="..\:/Users/Emre/AndroidStudioProjects/CurrencyExchange/app/src/main/res/layout/activity_main.xml" value="0.2" />
       </map>
     </option>
   </component>
@@ -12,5 +13,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>
