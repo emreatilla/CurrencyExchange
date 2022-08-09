@@ -36,7 +36,7 @@ class MainViewModel: ViewModel() {
                     }
 
                     override fun onError(e: Throwable) {
-                        Log.e("onErr", e.toString())
+                        Log.e("onEr", e.toString())
                         exchange_error.value = true
                         exchange_load.value = true
                     }
