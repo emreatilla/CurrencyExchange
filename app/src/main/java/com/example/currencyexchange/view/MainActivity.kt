@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
                 binding.tvResult.visibility = View.VISIBLE
                 binding.tvResult.text = amount.toString() + " " + fromString + " = " + data.result.toString() + " " + toString
                 Log.e("result", data.result.toString())
-                // Progress bar issue fixed.
+                // Progress bar issue fixed
                 viewmodel.exchange_data = MutableLiveData<ExchangeModel>()
             }
         })
