@@ -18,14 +18,14 @@ class MainViewModel: ViewModel() {
     val exchange_error = MutableLiveData<Boolean>()
     val exchange_load = MutableLiveData<Boolean>()
 
-    fun refreshData(toCurrency: String, fromCurrency: String, amountCurrency: Float) {
-        getDataFromAPI(toCurrency, fromCurrency, amountCurrency)
+    fun refreshData(toCurrency: String, fromCurrency: String, amountCurrency: Float, apiKey : String) {
+        getDataFromAPI(toCurrency, fromCurrency, amountCurrency, apiKey)
     }
 
-    private fun getDataFromAPI(toCurrency: String, fromCurrency: String, amountCurrency: Float){
+    private fun getDataFromAPI(toCurrency: String, fromCurrency: String, amountCurrency: Float, apiKey: String){
         exchange_load.value = true
         disposable.add(
-            exchangeAPIService.getDataService(toCurrency, fromCurrency, amountCurrency)
+            exchangeAPIService.getDataService(toCurrency, fromCurrency, amountCurrency, apiKey)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object: DisposableSingleObserver<ExchangeModel>(){

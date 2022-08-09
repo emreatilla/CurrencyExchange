@@ -3,6 +3,7 @@ package com.example.currencyexchange.view
 import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.icu.text.IDNA
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.example.currencyexchange.BuildConfig
 import com.example.currencyexchange.databinding.ActivityMainBinding
 import com.example.currencyexchange.model.ExchangeModel
 import com.example.currencyexchange.model.Query
@@ -46,7 +48,9 @@ class MainActivity : AppCompatActivity() {
 
             // viewmodel.refreshData("USD", "TRY", 40)
 
-            viewmodel.refreshData(toString, fromString, amount)
+            val apiKey = BuildConfig.API_KEY
+
+            viewmodel.refreshData(toString, fromString, amount, apiKey)
             getLiveData(toString, fromString, amount)
         }
 
