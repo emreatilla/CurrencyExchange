@@ -1,6 +1,5 @@
 package com.example.currencyexchange.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.currencyexchange.model.ExchangeModel
@@ -36,13 +35,10 @@ class MainViewModel: ViewModel() {
                     }
 
                     override fun onError(e: Throwable) {
-                        Log.e("onErr", e.toString())
                         exchange_error.value = true
                         exchange_load.value = true
                     }
                 } )
         )
-
     }
-
 }

@@ -7,7 +7,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-// https://api.apilayer.com/exchangerates_data/convert?to=EUR&from=TRY&amount=10&apikey=mDfGcCNE1S8boioyjaem6cgWEhFL3Ubz
 class ExchangeAPIService {
     private val BASE_URL = "https://api.apilayer.com/"
     private val api = Retrofit.Builder()

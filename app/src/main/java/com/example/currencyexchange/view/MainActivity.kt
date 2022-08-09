@@ -9,6 +9,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewmodel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -60,8 +62,6 @@ class MainActivity : AppCompatActivity() {
 
                     binding.etAmount.visibility = View.GONE
                     binding.etAmount.visibility = View.VISIBLE
-
-                    // viewmodel.refreshData("USD", "TRY", 40)
 
                     val apiKey = BuildConfig.API_KEY
 
