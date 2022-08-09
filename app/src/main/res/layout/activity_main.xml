@@ -86,7 +86,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="50dp"
-
                         android:entries="@array/currency_codes"
                         android:minHeight="48dp"
                         app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -154,7 +153,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.497"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tilFrom" />
+                        app:layout_constraintTop_toBottomOf="@+id/tilAmount" />
 
                     <TextView
                         android:id="@+id/tvResult"
@@ -171,7 +170,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/button" />
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilFrom"
+                        android:id="@+id/tilAmount"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="224dp"
                         android:layout_height="65dp"
@@ -183,7 +182,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etFrom"
+                            android:id="@+id/etAmount"
                             android:layout_width="224dp"
                             android:layout_height="51dp"
                             android:inputType="numberDecimal" />
