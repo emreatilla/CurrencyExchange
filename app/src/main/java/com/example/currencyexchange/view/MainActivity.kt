@@ -24,28 +24,19 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewmodel: MainViewModel
 
-    private lateinit var GET: SharedPreferences
-    private lateinit var SET: SharedPreferences.Editor
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        GET = getSharedPreferences(packageName, MODE_PRIVATE)
-        SET = GET.edit()
-
         viewmodel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
-        val fromstring = GET.getString("fromString", "USD").toString()
-        val tostring = GET.getString("toString", "TRY").toString()
-        binding.spinner2.setSelection(getIndex(binding.spinner2, fromstring))
-        binding.spinner.setSelection(getIndex(binding.spinner2, tostring))
-
+        binding.spFrom.setSelection(0)
+        binding.spTo.setSelection(1)
 
         binding.button.setOnClickListener {
-            val toString = binding.spinner.selectedItem.toString()
-            val fromString = binding.spinner2.selectedItem.toString()
+            val toString = binding.spTo.selectedItem.toString()
+            val fromString = binding.spFrom.selectedItem.toString()
             val amount = binding.etFrom.text.toString().toFloat()
             binding.progressBar.visibility = View.VISIBLE
             binding.tvResult.visibility = View.GONE
@@ -57,25 +48,12 @@ class MainActivity : AppCompatActivity() {
 
             viewmodel.refreshData(toString, fromString, amount)
             getLiveData(toString, fromString, amount)
-            // viewmodel.exchange_data.value = ExchangeModel("1", İnfo(4.5, 1), Query(4.1f, "s", "s"), 4.1, true)
         }
 
-    }
-
-    //private method of your class
-    private fun getIndex(spinner: Spinner, myString: String): Int {
-        for (i in 0 until spinner.count) {
-            if (spinner.getItemAtPosition(i).toString().equals(myString, ignoreCase = true)) {
-                return i
-            }
-        }
-        return 0
     }
 
     @SuppressLint("SetTextI18n")
     private fun getLiveData(toString : String, fromString: String, amount : Float) {
-        // viewmodel.refreshData("USD", "TRY", 40)
-
         viewmodel.exchange_data.observe(this, Observer { data ->
             data?.let {
                 binding.progressBar.visibility = View.GONE

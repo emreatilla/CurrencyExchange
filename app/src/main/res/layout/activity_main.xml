@@ -74,14 +74,14 @@
                         style="?android:attr/progressBarStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="200dp"
+                        android:layout_marginTop="25dp"
                         android:visibility="gone"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/button" />
 
                     <Spinner
-                        android:id="@+id/spinner"
+                        android:id="@+id/spTo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="50dp"
@@ -93,7 +93,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <Spinner
-                        android:id="@+id/spinner2"
+                        android:id="@+id/spFrom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="50dp"
@@ -113,9 +113,9 @@
                         android:text="@string/string_from"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/spinner2"
-                        app:layout_constraintEnd_toEndOf="@+id/spinner2"
-                        app:layout_constraintStart_toStartOf="@+id/spinner2"
+                        app:layout_constraintBottom_toTopOf="@+id/spFrom"
+                        app:layout_constraintEnd_toEndOf="@+id/spFrom"
+                        app:layout_constraintStart_toStartOf="@+id/spFrom"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -126,9 +126,9 @@
                         android:text="@string/string_to"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/spinner"
-                        app:layout_constraintEnd_toEndOf="@+id/spinner"
-                        app:layout_constraintStart_toStartOf="@+id/spinner"
+                        app:layout_constraintBottom_toTopOf="@+id/spTo"
+                        app:layout_constraintEnd_toEndOf="@+id/spTo"
+                        app:layout_constraintStart_toStartOf="@+id/spTo"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
