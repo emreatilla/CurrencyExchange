@@ -2,14 +2,19 @@ package com.example.currencyexchange.view
 
 import android.annotation.SuppressLint
 import android.content.SharedPreferences
+import android.icu.text.IDNA
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.currencyexchange.databinding.ActivityMainBinding
+import com.example.currencyexchange.model.ExchangeModel
+import com.example.currencyexchange.model.Query
+import com.example.currencyexchange.model.İnfo
 import com.example.currencyexchange.viewmodel.MainViewModel
 
 
@@ -52,6 +57,7 @@ class MainActivity : AppCompatActivity() {
 
             viewmodel.refreshData(toString, fromString, amount)
             getLiveData(toString, fromString, amount)
+            // viewmodel.exchange_data.value = ExchangeModel("1", İnfo(4.5, 1), Query(4.1f, "s", "s"), 4.1, true)
         }
 
     }
@@ -76,6 +82,8 @@ class MainActivity : AppCompatActivity() {
                 binding.tvResult.visibility = View.VISIBLE
                 binding.tvResult.text = amount.toString() + " " + fromString + " = " + data.result.toString() + " " + toString
                 Log.e("result", data.result.toString())
+                // Progress bar issue fixed
+                viewmodel.exchange_data = MutableLiveData<ExchangeModel>()
             }
         })
 

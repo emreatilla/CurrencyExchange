@@ -14,7 +14,7 @@ class MainViewModel: ViewModel() {
     private val exchangeAPIService = ExchangeAPIService()
     private val disposable = CompositeDisposable()
 
-    val exchange_data = MutableLiveData<ExchangeModel>()
+    var exchange_data = MutableLiveData<ExchangeModel>()
     val exchange_error = MutableLiveData<Boolean>()
     val exchange_load = MutableLiveData<Boolean>()
 
