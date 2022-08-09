@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -44,21 +45,31 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.button.setOnClickListener {
-            val toString = binding.spTo.selectedItem.toString()
-            val fromString = binding.spFrom.selectedItem.toString()
-            val amount = binding.etAmount.text.toString().toFloat()
-            binding.progressBar.visibility = View.VISIBLE
-            binding.tvResult.visibility = View.GONE
+            try {
+                val amountStr = binding.etAmount.text.toString()
+                if(amountStr[0] == '.' || amountStr[amountStr.length - 1] == '.')
+                    Toast.makeText(this, "Make sure you gave valid amount", Toast.LENGTH_LONG).show()
+                else {
+                    val toString = binding.spTo.selectedItem.toString()
+                    val fromString = binding.spFrom.selectedItem.toString()
+                    val amount = binding.etAmount.text.toString().toFloat()
+                    binding.progressBar.visibility = View.VISIBLE
+                    binding.tvResult.visibility = View.GONE
 
-            binding.etAmount.visibility = View.GONE
-            binding.etAmount.visibility = View.VISIBLE
+                    binding.etAmount.visibility = View.GONE
+                    binding.etAmount.visibility = View.VISIBLE
 
-            // viewmodel.refreshData("USD", "TRY", 40)
+                    // viewmodel.refreshData("USD", "TRY", 40)
 
-            val apiKey = BuildConfig.API_KEY
+                    val apiKey = BuildConfig.API_KEY
 
-            viewmodel.refreshData(toString, fromString, amount, apiKey)
-            getLiveData(toString, fromString, amount)
+                    viewmodel.refreshData(toString, fromString, amount, apiKey)
+                    getLiveData(toString, fromString, amount)
+                }
+            }catch (e:Exception){
+                Toast.makeText(this, "Make sure you gave valid amount", Toast.LENGTH_LONG).show()
+            }
+
         }
 
     }
