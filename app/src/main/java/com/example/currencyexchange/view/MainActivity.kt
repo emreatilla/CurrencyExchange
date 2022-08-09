@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.etAmount.setOnClickListener {
-            myEnter()
+            enterKeyListener()
         }
 
         binding.button.setOnClickListener {
@@ -55,6 +55,8 @@ class MainActivity : AppCompatActivity() {
                     val amount = binding.etAmount.text.toString().toFloat()
                     binding.progressBar.visibility = View.VISIBLE
                     binding.tvResult.visibility = View.GONE
+
+                    closeKeyBoard()
 
                     binding.etAmount.visibility = View.GONE
                     binding.etAmount.visibility = View.VISIBLE
@@ -88,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
-    private fun myEnter() {
+    private fun enterKeyListener() {
         binding.etAmount.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
                 closeKeyBoard()
