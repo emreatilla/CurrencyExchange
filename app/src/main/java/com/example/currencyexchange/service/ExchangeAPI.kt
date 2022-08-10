@@ -1,5 +1,6 @@
 package com.example.currencyexchange.service
 
+import com.example.currencyexchange.BuildConfig
 import com.example.currencyexchange.model.ExchangeModel
 import io.reactivex.Single
 import retrofit2.http.GET
@@ -12,6 +13,6 @@ interface ExchangeAPI {
         @Query("to") toCurrency: String,
         @Query("from") fromCurrency: String,
         @Query("amount") amountCurrency: Float,
-        @Query("apikey") apiKey: String
+        @Query("apikey") apiKey: String = BuildConfig.API_KEY
     ): Single<ExchangeModel>
 }

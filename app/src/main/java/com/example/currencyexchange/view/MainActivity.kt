@@ -62,9 +62,7 @@ class MainActivity : AppCompatActivity() {
                     binding.etAmount.visibility = View.GONE
                     binding.etAmount.visibility = View.VISIBLE
 
-                    val apiKey = BuildConfig.API_KEY
-
-                    viewmodel.refreshData(toString, fromString, amount, apiKey)
+                    viewmodel.refreshData(toString, fromString, amount)
                     getLiveData(toString, fromString, amount)
                 }
             }catch (e:Exception){
