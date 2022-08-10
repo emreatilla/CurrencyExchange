@@ -18,6 +18,10 @@ Architecture
 --------------
 The app uses [MVVM architecture][10] to have a unidirectional live of data, separation of concern, testability, and a lot more.
 
+App GIF
+--------------
+![](https://github.com/emreatilla/CurrencyExchange/commit/ba1c6fab2a9e03036d93f5f9c75aa6eebf34a359)
+
 
 
 
