@@ -3,7 +3,6 @@ package com.example.currencyexchange.view
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -83,7 +82,6 @@ class MainActivity : AppCompatActivity() {
                 binding.progressBar.visibility = View.GONE
                 binding.tvResult.visibility = View.VISIBLE
                 binding.tvResult.text = amount.toString() + " " + fromString + " = " + data.result.toString() + " " + toString
-                Log.e("result", data.result.toString())
                 // Progress bar issue fixed
                 viewmodel.exchange_data = MutableLiveData<ExchangeModel>()
             }

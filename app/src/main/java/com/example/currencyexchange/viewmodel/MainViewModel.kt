@@ -9,6 +9,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
+
 class MainViewModel: ViewModel() {
     private val exchangeAPIService = ExchangeAPIService()
     private val disposable = CompositeDisposable()
