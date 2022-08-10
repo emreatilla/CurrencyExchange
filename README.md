@@ -20,7 +20,7 @@ The app uses [MVVM architecture][10] to have a unidirectional live of data, sepa
 
 App GIF
 --------------
-![](https://github.com/emreatilla/CurrencyExchange/commit/ba1c6fab2a9e03036d93f5f9c75aa6eebf34a359)
+![](https://github.com/emreatilla/CurrencyExchange/blob/master/currency_exchange.gif)
 
 
 
